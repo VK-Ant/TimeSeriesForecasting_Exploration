@@ -4,11 +4,34 @@ from prophet import Prophet
 import yfinance as yf
 from prophet.plot import plot_plotly, plot_components_plotly
 from plotly import graph_objs as go
+from streamlit_extras.add_vertical_space import add_vertical_space
+
+
+with st.sidebar:
+    st.title('📈VK - 💡Stock Forecasting')
+    st.markdown('''
+    ## About APP:
+
+    The app's primary resource is utilised to create::
+
+    - [streamlit](https://streamlit.io/)
+    - [Facebook_Prophet](https://facebook.github.io/prophet)
+
+    ## About me:
+
+    - [Linkedin](https://www.linkedin.com/in/venkat-vk/)
+    
+    ''')
+
+    add_vertical_space(4)
+    st.write('💡All about forecasting, created by VK🤗')
+    
+print("-"*100)
 
 START = "2015-01-01"
 TODAY = date.today().strftime("%Y-%m-%d")
 
-st.title('VK: Stock Forecasting for your personal purpose')
+st.title('📈 VK: Stock Forecasting for your personal purpose')
 
 stocks = ('GOOG', 'AAPL', 'MSFT', 'GME','NVDA','RELI', 'TCS.NS','TSLA','GC=F')
 selected_stock = st.selectbox('Select dataset for prediction', stocks)
